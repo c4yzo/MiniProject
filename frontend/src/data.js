@@ -59,7 +59,7 @@ const data = {
             rating: 4.1,
             numReviews: 12,
             description: "A modern desk lamp with adjustable brightness."
-        },
+        },/*
         {
             id: 6,
             name: "Water Bottle",
@@ -71,7 +71,19 @@ const data = {
             rating: 4.6,
             numReviews: 40,
             description: "A durable water bottle perfect for outdoor activities."
-        }
+        },
+        {
+            id: 7,
+            name: "Full Sleeve Jersey",
+            price: 79.99,
+            category: "Clothing",
+            image: "./assets/images/full_sleeve_jersey.jpg",
+            countInStock: 12,
+            brand: "Nike",
+            rating: 4.4,
+            numReviews: 25,
+            description: "A comfortable full sleeve jersey for everyday wear."
+        }*/
     ]
 };
 export default data;

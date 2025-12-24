@@ -1,0 +1,102 @@
+.tray-section {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0px 20px; 
+    margin-bottom: 60px;
+}
+
+/* Grid for the 3 trays */
+.tray-section .tray-grid {
+    display: flex;
+    gap: 30px;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+/* 1. Tray Hover Effect: Enlarge and Shadow */
+.tray-section .product-tray {
+    flex: 1;
+    min-width: 320px;
+    background: #fff;
+    padding: 25px;
+    border-radius: 15px;
+    border: 1px solid #eee;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.tray-section .product-tray:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+}
+
+.tray-section .tray-title {
+    font-size: 1.25rem;
+    margin-bottom: 25px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* 2. Product Row Slide Effect */
+.tray-section .product-item {
+    display: flex;
+    align-items: center;
+    padding: 15px 0;
+    border-bottom: 1px solid #f5f5f5;
+    position: relative;
+    transition: transform 0.3s ease; /* Slide right transition */
+}
+
+.tray-section .product-item:last-child { border-bottom: none; }
+
+/* Trigger slide on hover */
+.tray-section .product-item:hover {
+    transform: translateX(15px);
+}
+
+.tray-section .product-img {
+    width: 70px;
+    height: 70px;
+    margin-right: 15px;
+    overflow: hidden;
+    border-radius: 8px;
+    background: #f9f9f9;
+}
+
+.tray-section .product-img img { width: 100%; height: 100%; object-fit: cover; }
+
+.tray-section .product-details h4 { font-size: 0.95rem; margin-bottom: 5px; color: #333; }
+.tray-section .rating { color: #ffc107; font-size: 0.75rem; }
+.tray-section .rating span { color: #aaa; margin-left: 4px; }
+.tray-section .price { font-weight: 600; color: #000; margin-top: 5px; }
+
+/* 3. Action Icons Visibility */
+.tray-section .product-actions {
+    position: absolute;
+    right: 10px;
+    display: flex;
+    gap: 8px;
+    opacity: 0; /* Hidden by default */
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.tray-section .product-item:hover .product-actions {
+    opacity: 1;
+    visibility: visible;
+}
+
+.tray-section .action-btn {
+    background: #f0f0f0;
+    border: none;
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.tray-section .action-btn:hover {
+    background: #000;
+    color: #fff;
+}
