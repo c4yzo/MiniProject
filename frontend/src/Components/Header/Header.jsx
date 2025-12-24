@@ -1,11 +1,12 @@
 import React from 'react'
 import './Header.css'
+import { Link } from 'react-router-dom'
 export default function Header() {
     return (
         <header className="main-header">
             <div className="container">
                 <div className="logo">
-                    <a href="#">SHOP<span>UI</span></a>
+                    <Link to="/">SHOP<span>UI</span></Link>
                 </div>
 
                 <div className="search-container">

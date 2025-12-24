@@ -3,6 +3,7 @@ const data = {
         {
             id: 1,
             name: "Wireless Mouse",
+            slug: "wireless-mouse",
             price: 25.99,
             category: "Electronics",
             image: "./assets/images/wireless_mouse.jpg",
@@ -15,6 +16,7 @@ const data = {
         {
             id: 2,
             name: "Bluetooth Headphones",
+            slug: "bluetooth-headphones",
             price: 59.99,
             category: "Electronics",
             image: "./assets/images/bluetooth_headphones.jpg",
@@ -27,6 +29,7 @@ const data = {
         {
             id: 3,
             name: "Coffee Mug",
+            slug: "coffee-mug",
             price: 9.99,
             category: "Kitchen",
             image: "./assets/images/coffee_mug.jpg",
@@ -39,6 +42,7 @@ const data = {
         {
             id: 4,
             name: "Notebook",
+            slug: "notebook",
             price: 4.99,
             category: "Stationery",
             image: "./assets/images/notebook.jpg",
@@ -51,6 +55,7 @@ const data = {
         {
             id: 5,
             name: "Desk Lamp",
+            slug: "desk-lamp",
             price: 19.99,
             category: "Furniture",
             image: "./assets/images/desk_lamp.jpg",
@@ -63,6 +68,7 @@ const data = {
         {
             id: 6,
             name: "Water Bottle",
+            slug: "water-bottle",
             price: 14.99,
             category: "Outdoors",
             image: "./assets/images/water_bottle.jpg",
@@ -75,6 +81,7 @@ const data = {
         {
             id: 7,
             name: "Full Sleeve Jersey",
+            slug: "full-sleeve-jersey",
             price: 79.99,
             category: "Clothing",
             image: "./assets/images/full_sleeve_jersey.jpg",

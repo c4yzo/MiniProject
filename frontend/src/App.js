@@ -1,8 +1,8 @@
 import './App.css';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Header from './Components/Header/Header.jsx';
-import Showcase from './Components/Showcase/Showcase.jsx';
-import FeaturedShelf from './Components/FeaturedShelf/FeaturedShelf.jsx';
+import HomeScreen from './Screens/HomeScreen.jsx';
+import ProductScreen from './Screens/ProductScreen.jsx';
 
 function App() {
   return (
@@ -11,10 +11,9 @@ function App() {
         <Header />
         <main>
           <Routes>
-            <Route path="/" element={<div>Home Page Content</div>} />
+            <Route path="/" element={<HomeScreen />} />
+            <Route path="/product/:slug" element={<ProductScreen />} />
           </Routes>
-          <Showcase />
-          <FeaturedShelf />
         </main>
       </div>
     </BrowserRouter>

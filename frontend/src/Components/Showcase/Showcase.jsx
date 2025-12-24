@@ -1,8 +1,8 @@
 import React from 'react'
 import './Showcase.css'
 import './Showcase.js'
-import '../../data.js'
 import data from '../../data.js'
+import { Link } from 'react-router-dom'
 
 export default function Showcase() {
   return (
@@ -18,8 +18,10 @@ export default function Showcase() {
             <div className="product-card">
               <div className="badge-limited">Limited</div>
               <div className="product-img">
-                <img src={ product.image }
-                  alt={ product.name }></img>
+                <Link to={`/product/${product.slug}`}>
+                  <img src={product.image}
+                    alt={product.name}></img>
+                </Link>
 
                 <div className="side-actions">
                   <button className="action-btn wishlist" title="Add to Wishlist">
@@ -38,14 +40,14 @@ export default function Showcase() {
                 </div>
               </div>
               <div className="product-info">
-                <span className="category">{ product.category }</span>
-                <h3>{ product.name }</h3>
+                <span className="category">{product.category}</span>
+                <h3>{product.name}</h3>
                 <div className="rating">
                   <i className="fas fa-star"></i><i className="fas fa-star"></i><i className="fas fa-star"></i><i
                     className="fas fa-star"></i><i className="fas fa-star"></i>
-                  <span>({ product.numReviews })</span>
+                  <span>({product.numReviews})</span>
                 </div>
-                <p className="price">${ product.price }</p>
+                <p className="price">${product.price}</p>
               </div>
             </div>
           </div>
