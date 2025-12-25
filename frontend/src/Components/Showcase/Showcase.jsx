@@ -1,10 +1,18 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+import axios from 'axios'
+import { Link } from 'react-router-dom'
 import './Showcase.css'
 import './Showcase.js'
-import data from '../../data.js'
-import { Link } from 'react-router-dom'
 
 export default function Showcase() {
+  const [products, setProducts] = useState([]);
+  useEffect(() => {
+    const fetchData = async () => {
+      const result = await axios.get('api/products');
+      setProducts(result.data);
+    }
+    fetchData();
+  }, [])
   return (
     <section className="best-sellers">
       <div className="section-header">
@@ -13,7 +21,7 @@ export default function Showcase() {
       </div>
 
       <div className="product-grid" id="product-grid">
-        {data.products.map((product) => (
+        {products.map((product) => (
           <div key={product.id}>
             <div className="product-card">
               <div className="badge-limited">Limited</div>
