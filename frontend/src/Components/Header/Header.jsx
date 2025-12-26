@@ -1,7 +1,10 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import './Header.css'
 import { Link } from 'react-router-dom'
+import { Store } from '../../Store'
 export default function Header() {
+    const { state } = useContext(Store);
+    const { cart } = state;
     return (
         <header className="main-header">
             <div className="container">
@@ -11,7 +14,7 @@ export default function Header() {
 
                 <div className="search-container">
                     <input type="text" placeholder="Search products..."></input>
-                        <button type="submit"><i className="fa-solid fa-magnifying-glass"></i></button>
+                    <button type="submit"><i className="fa-solid fa-magnifying-glass"></i></button>
                 </div>
 
                 <div className="header-actions">
@@ -24,11 +27,13 @@ export default function Header() {
                         <i className="fa-regular fa-heart"></i>
                         <span className="badge">0</span>
                     </a>
-
-                    <a href="#" className="action-item" title="Cart">
+                    
+                    <Link to="/cart" className="action-item" title="Cart">
                         <i className="fa-solid fa-cart-shopping"></i>
-                        <span className="badge">3</span>
-                    </a>
+                        {cart.cartItems.length > 0 &&
+                            <span className="badge">{cart.cartItems.length}</span>
+                        }
+                    </Link>
 
                     <div className="user-account">
                         <i className="fa-regular fa-user"></i>

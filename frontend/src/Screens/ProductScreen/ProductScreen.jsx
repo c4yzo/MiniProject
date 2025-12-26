@@ -1,7 +1,8 @@
-import React, { useEffect, useReducer } from 'react'
+import React, { useContext, useEffect, useReducer } from 'react'
 import { useParams } from 'react-router-dom'
 import './ProductScreen.css'
 import axios from 'axios';
+import { Store } from '../../Store';
 
 const reducer = (state, action) => {
     switch (action.type) {
@@ -36,6 +37,12 @@ export default function ProductScreen() {
         };
         fetchData();
     }, [slug]);
+
+    const { dispatch: contextDispatch } = useContext(Store);
+    const addToCartHandler = () => {
+        contextDispatch({ type: 'CART_ADD_ITEM', payload: { ...product, quantity: 1 } })
+    };
+
     return (
         <>
             <title>
@@ -70,7 +77,7 @@ export default function ProductScreen() {
 
                             {product.countInStock > 0 &&
                                 <div className="buttons">
-                                    <button className="cart-btn">Add to Cart</button>
+                                    <button className="cart-btn" onClick={addToCartHandler}>Add to Cart</button>
                                     <button className="buy-btn">Buy Now</button>
                                 </div>
                             }
