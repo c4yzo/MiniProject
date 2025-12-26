@@ -1,8 +1,8 @@
 import './App.css';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Header from './Components/Header/Header.jsx';
-import HomeScreen from './Screens/HomeScreen.jsx';
-import ProductScreen from './Screens/ProductScreen.jsx';
+import HomeScreen from './Screens/HomeScreen/HomeScreen.jsx';
+import ProductScreen from './Screens/ProductScreen/ProductScreen.jsx';
 
 function App() {
   return (
