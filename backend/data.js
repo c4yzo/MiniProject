@@ -1,7 +1,7 @@
 const data = {
     products: [
         {
-            id: 1,
+            _id: '1',
             name: "Wireless Mouse",
             slug: "wireless-mouse",
             price: 25.99,
@@ -14,7 +14,7 @@ const data = {
             description: "A high-precision wireless mouse with ergonomic design."
         },
         {
-            id: 2,
+            _id: '2',
             name: "Bluetooth Headphones",
             slug: "bluetooth-headphones",
             price: 59.99,
@@ -27,20 +27,20 @@ const data = {
             description: "Premium Bluetooth headphones with noise cancellation."
         },
         {
-            id: 3,
+            _id: '3',
             name: "Coffee Mug",
             slug: "coffee-mug",
             price: 9.99,
             category: "Kitchen",
             image: "/assets/images/coffee_mug.jpg",
-            countInStock: 0,
+            countInStock: 5,
             brand: "Cuisinart",
             rating: 4.0,
             numReviews: 15,
             description: "A ceramic coffee mug with a comfortable handle."
         },
         {
-            id: 4,
+            _id: '4',
             name: "Notebook",
             slug: "notebook",
             price: 4.99,
@@ -53,7 +53,7 @@ const data = {
             description: "A high-quality notebook with premium paper."
         },
         {
-            id: 5,
+            _id: '5',
             name: "Desk Lamp",
             slug: "desk-lamp",
             price: 19.99,
@@ -66,7 +66,7 @@ const data = {
             description: "A modern desk lamp with adjustable brightness."
         },/*
         {
-            id: 6,
+            _id: '6',
             name: "Water Bottle",
             slug: "water-bottle",
             price: 14.99,
@@ -79,7 +79,7 @@ const data = {
             description: "A durable water bottle perfect for outdoor activities."
         },
         {
-            id: 7,
+            _id: '7',
             name: "Full Sleeve Jersey",
             slug: "full-sleeve-jersey",
             price: 79.99,

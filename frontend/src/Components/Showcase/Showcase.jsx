@@ -46,7 +46,7 @@ export default function Showcase() {
         {loading ? <div>Loading...</div> :
           error ? <div>{error}</div> :
             products.map((product) => (
-              <div key={product.id}>
+              <div key={product._id}>
                 <div className="product-card">
                   <div className="badge-limited">Limited</div>
                   <div className="product-img">

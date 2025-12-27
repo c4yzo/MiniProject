@@ -11,7 +11,15 @@ const initialState = {
 function reducer(state, action) {
     switch (action.type) {
         case 'CART_ADD_ITEM':
-            return { ...state, cart: { ...state.cart, cartItems: [...state.cart.cartItems, action.payload] } };
+            const newItem = action.payload;
+            let cartItems = state.cart.cartItems;
+            const index = cartItems.findIndex(item => item._id === newItem._id);
+            if (index !== -1) {
+                cartItems[index] = newItem;
+            } else {
+                cartItems.push(newItem);
+            }
+            return { ...state, cart: { ...state.cart, cartItems: cartItems } };
         default:
             return state;
     }

@@ -27,7 +27,7 @@ export default function Header() {
                         <i className="fa-regular fa-heart"></i>
                         <span className="badge">0</span>
                     </a>
-                    
+
                     <Link to="/cart" className="action-item" title="Cart">
                         <i className="fa-solid fa-cart-shopping"></i>
                         {cart.cartItems.length > 0 &&
