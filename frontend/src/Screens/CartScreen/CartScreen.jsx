@@ -1,40 +1,60 @@
 import React, { useContext } from 'react'
+import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
 import './CartScreen.css'
 import { Store } from '../../Store';
 
 export default function CartScreen() {
+    const navigate = useNavigate();
     const { state, dispatch } = useContext(Store);
     const { cart: { cartItems } } = state;
+
+    const updateCartHandler = async (item, quantity) => {
+        const { data } = await axios.get(`/api/products/${item._id}`);
+        if (data.countInStock < quantity) {
+            window.alert("Sorry, the product is out of stock");
+            return;
+        }
+        dispatch({ type: 'CART_ADD_ITEM', payload: { ...item, quantity: quantity } });
+    }
+
+    const removeItemHandler = (item) => {
+        dispatch({ type: 'CART_REMOVE_ITEM', payload: item });
+    }
+
+    const checkoutHandler = () => {
+        navigate('/signin?redirect=/shipping');
+    }
     return (
         <>
             <title>Cart | MiniProject</title>
             <div className="cart-screen">
-                <div class="cart-container">
+                <div className="cart-container">
                     <h2>Your Cart</h2>
 
                     {cartItems.map((item) => (
-                        <div class="cart-item" key={item._id}>
+                        <div className="cart-item" key={item._id}>
                             <img src={item.image} alt={item.name}></img>
 
-                            <div class="item-details">
-                                <div class="item-name">{item.name}</div>
-                                <div class="item-price">${item.price}</div>
+                            <div className="item-details">
+                                <div className="item-name">{item.name}</div>
+                                <div className="item-price">${item.price}</div>
                             </div>
 
-                            <div class="quantity-control">
-                                <button>-</button>
+                            <div className="quantity-control">
+                                <button onClick={() => updateCartHandler(item, item.quantity - 1)} disabled={item.quantity <= 1}>-</button>
                                 <span>{item.quantity}</span>
-                                <button>+</button>
+                                <button onClick={() => updateCartHandler(item, item.quantity + 1)}>+</button>
                             </div>
 
-                            <div class="delete-btn">✖</div>
+                            <button className="delete-btn" onClick={() => removeItemHandler(item)}>✖</button>
                         </div>
                     ))}
 
-                    <div class="cart-summary">
-                        <div class="total">Total: ${cartItems.reduce((sum, item) => (sum + item.price * item.quantity), 0)}</div>
+                    <div className="cart-summary">
+                        <div className="total">Total: ${cartItems.reduce((sum, item) => (sum + item.price * item.quantity), 0)}</div>
                         {cartItems.length > 0 &&
-                            <button class="place-order">Place Order</button>
+                            <button className="place-order" onClick={() => checkoutHandler()}>Place Order</button>
                         }
                     </div>
                 </div>

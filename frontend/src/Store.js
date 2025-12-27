@@ -4,13 +4,13 @@ export const Store = createContext();
 
 const initialState = {
     cart: {
-        cartItems: []
+        cartItems: localStorage.getItem('cartItems') ? JSON.parse(localStorage.getItem('cartItems')) : []
     }
 }
 
 function reducer(state, action) {
     switch (action.type) {
-        case 'CART_ADD_ITEM':
+        case 'CART_ADD_ITEM': {
             const newItem = action.payload;
             let cartItems = state.cart.cartItems;
             const index = cartItems.findIndex(item => item._id === newItem._id);
@@ -19,7 +19,14 @@ function reducer(state, action) {
             } else {
                 cartItems.push(newItem);
             }
+            localStorage.setItem('cartItems', JSON.stringify(cartItems));
             return { ...state, cart: { ...state.cart, cartItems: cartItems } };
+        }
+        case 'CART_REMOVE_ITEM': {
+            const cartItems = state.cart.cartItems.filter((item) => item._id !== action.payload._id);
+            localStorage.setItem('cartItems', JSON.stringify(cartItems));
+            return { ...state, cart: { ...state.cart, cartItems: cartItems } };
+        }
         default:
             return state;
     }
