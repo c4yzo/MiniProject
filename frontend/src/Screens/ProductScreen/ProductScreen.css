@@ -57,7 +57,7 @@
     margin-top: 15px;
 }
 
-button {
+.product-screen button {
     flex: 1;
     padding: 10px;
     border: none;

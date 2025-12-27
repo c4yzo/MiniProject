@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useReducer } from 'react'
-import { useParams } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 import './ProductScreen.css'
 import axios from 'axios';
 import { Store } from '../../Store';
@@ -18,6 +18,7 @@ const reducer = (state, action) => {
 }
 
 export default function ProductScreen() {
+    const navigate = useNavigate();
     const params = useParams();
     const { slug } = params;
     const [{ loading, product, error }, dispatch] = useReducer(reducer, {
@@ -49,6 +50,7 @@ export default function ProductScreen() {
             return;
         }
         contextDispatch({ type: 'CART_ADD_ITEM', payload: { ...product, quantity: quantity } });
+        navigate('/cart');
     };
 
     return (
