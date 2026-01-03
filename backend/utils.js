@@ -1,0 +1,18 @@
+import jwt from 'jsonwebtoken'
+
+export const generateToken = (user) => {
+    return jwt.sign(
+        {
+            _id: user._id,
+            firstName: user.firstName,
+            lastName: user.lastName,
+            email: user.email,
+            canSell: user.canSell,
+            isBanned: user.isBanned,
+        },
+        process.env.JWT_SECRET,
+        {
+            expiresIn: '2d',
+        }
+    );
+};

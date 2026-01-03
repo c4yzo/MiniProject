@@ -8,7 +8,6 @@ const data = {
             email: "abhijith@gmail.com",
             password: bcrypt.hashSync("abhi@123"),
             canSell: true,
-            isBanned: false,
         },
         {
             firstName: "Adarsh",
@@ -16,7 +15,6 @@ const data = {
             email: "adarsh@gmail.com",
             password: bcrypt.hashSync("adarsh@123"),
             canSell: true,
-            isBanned: false,
         },
         {
             firstName: "Krishna",
@@ -24,7 +22,6 @@ const data = {
             email: "krishnaprasad@gmail.com",
             password: bcrypt.hashSync("prasad@123"),
             canSell: true,
-            isBanned: false,
         },
         {
             firstName: "Thejus",
@@ -32,7 +29,6 @@ const data = {
             email: "thejus@gmail.com",
             password: bcrypt.hashSync("thejus@123"),
             canSell: true,
-            isBanned: false,
         }
     ],
     products: [
