@@ -38,7 +38,7 @@ export default function CartScreen() {
 
                             <div className="item-details">
                                 <div className="item-name">{item.name}</div>
-                                <div className="item-price">${item.price}</div>
+                                <div className="item-price">₹{item.price}</div>
                             </div>
 
                             <div className="quantity-control">

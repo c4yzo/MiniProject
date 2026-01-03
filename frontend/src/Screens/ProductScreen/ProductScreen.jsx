@@ -20,7 +20,7 @@ const reducer = (state, action) => {
 export default function ProductScreen() {
     const navigate = useNavigate();
     const params = useParams();
-    const { slug } = params;
+    const { id } = params;
     const [{ loading, product, error }, dispatch] = useReducer(reducer, {
         loading: true,
         product: [],
@@ -30,14 +30,14 @@ export default function ProductScreen() {
         const fetchData = async () => {
             dispatch({ type: 'FETCH_REQUEST' });
             try {
-                const result = await axios.get(`/api/products/slug/${slug}`);
+                const result = await axios.get(`/api/products/${id}`);
                 dispatch({ type: 'FETCH_SUCCESS', payload: result.data });
             } catch (err) {
                 dispatch({ type: 'FETCH_FAIL', payload: err.message });
             }
         };
         fetchData();
-    }, [slug]);
+    }, [id]);
 
     const { state: contextState, dispatch: contextDispatch } = useContext(Store);
     const { cart } = contextState;
@@ -73,7 +73,7 @@ export default function ProductScreen() {
 
                             <div className="product-name">{product.name}</div>
 
-                            <div className="price">${product.price}</div>
+                            <div className="price">₹{product.price}</div>
 
                             <div className="rating">{product.rating} ★★★★☆</div>
                             <div className="reviews">{product.numReviews} reviews</div>

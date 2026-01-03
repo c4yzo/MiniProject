@@ -27,7 +27,7 @@ export default function Showcase() {
     const fetchData = async () => {
       dispatch({ type: 'FETCH_REQUEST' });
       try {
-        const result = await axios.get('/api/products');
+        const result = await axios.get('/api/products/new-arrivals');
         dispatch({ type: 'FETCH_SUCCESS', payload: result.data });
       } catch (err) {
         dispatch({ type: 'FETCH_FAIL', payload: err.message });
@@ -50,7 +50,7 @@ export default function Showcase() {
                 <div className="product-card">
                   <div className="badge-limited">Limited</div>
                   <div className="product-img">
-                    <Link to={`/product/${product.slug}`}>
+                    <Link to={`/product/${product._id}`}>
                       <img src={product.image}
                         alt={product.name}></img>
                     </Link>
@@ -79,7 +79,7 @@ export default function Showcase() {
                         className="fas fa-star"></i><i className="fas fa-star"></i>
                       <span>({product.numReviews})</span>
                     </div>
-                    <p className="price">${product.price}</p>
+                    <p className="price">₹{product.price}</p>
                   </div>
                 </div>
               </div>
