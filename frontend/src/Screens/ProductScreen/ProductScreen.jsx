@@ -39,8 +39,8 @@ export default function ProductScreen() {
         fetchData();
     }, [id]);
 
-    const { state: contextState, dispatch: contextDispatch } = useContext(Store);
-    const { cart } = contextState;
+    const { state: ctxState, dispatch: ctxDispatch } = useContext(Store);
+    const { cart } = ctxState;
     const addToCartHandler = async () => {
         const existItem = cart.cartItems.find(x => x._id === product._id);
         const quantity = existItem ? existItem.quantity + 1 : 1;
@@ -49,7 +49,7 @@ export default function ProductScreen() {
             window.alert("Sorry, the product is out of stock");
             return;
         }
-        contextDispatch({ type: 'CART_ADD_ITEM', payload: { ...product, quantity: quantity } });
+        ctxDispatch({ type: 'CART_ADD_ITEM', payload: { ...product, quantity: quantity } });
         navigate('/cart');
     };
 

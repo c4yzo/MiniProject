@@ -3,8 +3,13 @@ import './Header.css'
 import { Link } from 'react-router-dom'
 import { Store } from '../../Store'
 export default function Header() {
-    const { state } = useContext(Store);
-    const { cart } = state;
+    const { state, dispatch: ctxDispatch } = useContext(Store);
+    const { userInfo, cart } = state;
+
+    const signoutHandler = () => {
+        ctxDispatch({ type: 'USER_SIGNOUT' });
+        localStorage.removeItem('userInfo');
+    };
     return (
         <header className="main-header">
             <div className="container">
@@ -35,14 +40,25 @@ export default function Header() {
                         }
                     </Link>
 
-                    <div className="user-account">
-                        <i className="fa-regular fa-user"></i>
-                        <div className="auth-links">
-                            <a href="#">Login</a>
-                            <span>/</span>
-                            <a href="#">Register</a>
+                    {userInfo ? (
+                        <div className="user-account">
+                            <i className="fa-regular fa-user"></i>
+                            <div className="auth-links">
+                                <span>{userInfo.firstName}</span>
+                            </div>
+                            <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                            <button type="button" onClick={signoutHandler}>Sigout</button>
                         </div>
-                    </div>
+                    ) : (
+                        <div className="user-account">
+                            <i className="fa-regular fa-user"></i>
+                            <div className="auth-links">
+                                <Link to="/signin">Login</Link>
+                                <span>/</span>
+                                <Link to="/signup">Register</Link>
+                            </div>
+                        </div>
+                    )}
                 </div>
             </div>
         </header>
