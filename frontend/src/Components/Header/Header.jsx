@@ -9,7 +9,7 @@ export default function Header() {
         <header className="main-header">
             <div className="container">
                 <div className="logo">
-                    <Link to="/">SHOP<span>UI</span></Link>
+                    <Link to="/">NATE<span>URIX</span></Link>
                 </div>
 
                 <div className="search-container">

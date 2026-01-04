@@ -1,6 +1,6 @@
-import React, { useContext, useEffect, useReducer } from 'react'
-import { useNavigate, useParams } from 'react-router-dom'
-import './ProductScreen.css'
+import React, { useContext, useEffect, useReducer } from 'react';
+import { useNavigate, useParams } from 'react-router-dom';
+import './ProductScreen.css';
 import axios from 'axios';
 import { Store } from '../../Store';
 

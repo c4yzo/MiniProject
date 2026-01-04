@@ -1,55 +1,49 @@
-* {
+.main-header {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
-}
 
-body {
-    background-color: #f4f7f6;
-}
-
-.main-header {
     background: rgba(255, 255, 255, 0.95);
     backdrop-filter: blur(10px);
     padding: 15px 0;
-    box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
     position: sticky;
     top: 0;
     z-index: 1000;
 }
 
-.container {
+.main-header .container {
     max-width: 1400px;
     margin: 0 auto;
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 0 20px;
-    gap: 20px; /* Space between elements */
+    gap: 20px;
 }
 
-/* Logo */
-.logo a {
+.main-header .logo a {
     font-size: 24px;
     font-weight: 700;
     text-decoration: none;
-    color: #222;
+    /*color: #222;*/
+    color: #66BB6A;
     letter-spacing: -1px;
 }
 
-.logo span {
-    color: #ff4757;
+.main-header .logo span {
+    /*color: #ff4757;*/
+    color: #222;
 }
 
-/* Nav Menu */
-.nav-menu ul {
+.main-header .nav-menu ul {
     display: flex;
     list-style: none;
     gap: 20px;
 }
 
-.nav-menu a {
+.main-header .nav-menu a {
     text-decoration: none;
     color: #444;
     font-size: 14px;
@@ -57,13 +51,13 @@ body {
     transition: 0.3s;
 }
 
-.nav-menu a:hover {
+.main-header .nav-menu a:hover {
     color: #ff4757;
 }
 
-/* Search Bar */
-.search-container {
-    flex: 1; /* Allows search bar to grow */
+.main-header .search-container {
+    flex: 1;
+    /* Allows search bar to grow */
     display: flex;
     max-width: 600px;
     background: #f1f2f6;
@@ -73,12 +67,12 @@ body {
     transition: 0.3s;
 }
 
-.search-container:focus-within {
+.main-header .search-container:focus-within {
     background: #fff;
     border-color: #ff4757;
 }
 
-.search-container input {
+.main-header .search-container input {
     border: none;
     background: none;
     outline: none;
@@ -87,21 +81,20 @@ body {
     font-size: 14px;
 }
 
-.search-container button {
+.main-header .search-container button {
     border: none;
     background: none;
     color: #777;
     cursor: pointer;
 }
 
-/* Header Actions */
-.header-actions {
+.main-header .header-actions {
     display: flex;
     align-items: center;
     gap: 25px;
 }
 
-.action-item {
+.main-header .action-item {
     text-decoration: none;
     color: #222;
     font-size: 20px;
@@ -111,7 +104,7 @@ body {
     gap: 8px;
 }
 
-.sell-btn {
+.main-header .sell-btn {
     background: #222;
     color: #fff;
     padding: 8px 15px;
@@ -120,15 +113,15 @@ body {
     font-weight: 500;
 }
 
-.sell-btn i {
+.main-header .sell-btn i {
     font-size: 16px;
 }
 
-.sell-btn:hover {
+.main-header .sell-btn:hover {
     background: #ff4757;
 }
 
-.badge {
+.main-header .badge {
     position: absolute;
     top: -8px;
     right: -10px;
@@ -139,8 +132,7 @@ body {
     border-radius: 50%;
 }
 
-/* User Account */
-.user-account {
+.main-header .user-account {
     display: flex;
     align-items: center;
     gap: 10px;
@@ -148,29 +140,30 @@ body {
     padding-left: 20px;
 }
 
-.user-account i {
+.main-header .user-account i {
     font-size: 20px;
 }
 
-.auth-links {
+.main-header .auth-links {
     font-size: 13px;
     display: flex;
     gap: 5px;
 }
 
-.auth-links a {
+.main-header .auth-links a {
     text-decoration: none;
     color: #444;
     font-weight: 500;
 }
 
-.auth-links a:hover {
+.main-header .auth-links a:hover {
     text-decoration: underline;
 }
 
-/* Responsive Logic */
 @media (max-width: 1024px) {
-    .nav-menu, .sell-btn span {
-        display: none; /* Hide nav and text on smaller screens to keep it in one row */
+
+    .main-header .nav-menu,
+    .main-header .sell-btn span {
+        display: none;
     }
 }

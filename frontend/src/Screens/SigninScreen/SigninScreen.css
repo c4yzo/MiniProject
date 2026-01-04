@@ -1,0 +1,181 @@
+.signin-screen {
+    padding: 0;
+    margin: 0;
+    overflow-x: hidden;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.25)50%), url('../../images/QoGhYp.jpg');
+    background-position: top;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.signin-screen .containerr {
+    display: flex;
+    flex-wrap: wrap;
+    min-height: 75vh;
+    margin-top: 10vh;
+}
+
+.signin-screen .content {
+    min-width: 500px;
+    max-width: 900px;
+    height: auto;
+    margin: auto;
+    color: #fff;
+}
+
+.signin-screen .content h1 {
+    font-family: 'Times New Roman';
+    font-size: 50px;
+    letter-spacing: 2px;
+    color: #fff;
+}
+
+.signin-screen .content .par {
+    font-family: Arial;
+    letter-spacing: 1.2px;
+    line-height: 30px;
+}
+
+.signin-screen .login-form {
+    min-width: 400px;
+    max-width: 400px;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 30px;
+    border-radius: 12px;
+    box-sizing: border-box;
+    height: 450px;
+    margin: auto;
+    backdrop-filter: blur(10px);
+}
+
+.signin-screen .login-form .in {
+    width: 90%;
+    padding: 12px;
+    margin-bottom: 20px;
+    font-size: 16px;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+}
+
+.signin-screen .log_in {
+    display: inline-block;
+    background-color: #1c3b1b;
+    min-width: 90%;
+    color: #fff;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 12px;
+    border-radius: 10px;
+    text-align: center;
+    text-decoration: none;
+    margin-top: 30px;
+    margin-bottom: 40px;
+    transition: transform 0.15s ease, box-shadow 0.15 ease;
+}
+
+.signin-screen a.log_in:hover {
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+    background-color: #1e3f1d;
+    color: #f0eded;
+}
+
+.signin-screen .log_in:active {
+    transform: scale(0.95);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
+}
+
+.signin-screen .input-box {
+    position: relative;
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+.signin-screen .input-box input {
+    width: 100%;
+    padding: 10px 5px;
+    font-size: 16px;
+    color: #fff;
+    background: transparent;
+    border: none;
+    outline: none;
+}
+
+.signin-screen .input-box label {
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    color: #ccc;
+    font-size: 15px;
+    pointer-events: none;
+    transform: translateY(-50%);
+    transition: 0.3s ease;
+}
+
+.signin-screen .input-box span {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: #555;
+    transition: 0.3s;
+}
+
+.signin-screen .line2 {
+    width: 100%;
+    color: #fff;
+    margin-top: 28px;
+}
+
+.signin-screen .input-box input:focus~label,
+.signin-screen .input-box input:valid~label {
+    top: -8px;
+    font-size: 12px;
+    color: white;
+
+}
+
+.signin-screen .input-box input:focus~span,
+.signin-screen .input-box input:valid~span {
+    background: #1c3b1b;
+
+}
+
+.signin-screen .pass {
+    display: inline;
+    text-align: center;
+    color: white;
+    font-size: 15px;
+    text-decoration: none;
+    margin-left: 111px;
+}
+
+.signin-screen .pass:hover {
+    font-size: 14.7px;
+    color: #f0eded;
+}
+
+.signin-screen .butt {
+    display: block;
+    background-color: #286626;
+    color: #fff;
+    margin: 38px auto 0;
+    font-size: 18px;
+    width: 60%;
+    text-align: center;
+    padding: 12px;
+    border-radius: 6px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: transform 0.15s ease, box-shadow 0.15 ease;
+}
+
+.signin-screen .butt:hover {
+    background-color: #2b6929;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+}
+
+.signin-screen .butt:active {
+    transform: scale(0.95);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
+}
