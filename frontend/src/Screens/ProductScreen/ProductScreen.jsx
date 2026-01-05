@@ -60,7 +60,7 @@ export default function ProductScreen() {
                     ? 'Loading Product...'
                     : error
                         ? 'Error'
-                        : `${product.name} | MiniProject`}
+                        : `${product.name} | Nateurix`}
             </title>
             {loading
                 ? <div>Loading...</div>

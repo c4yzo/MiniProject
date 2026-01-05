@@ -59,7 +59,7 @@
 
 .best-sellers .overlay {
     position: absolute;
-    bottom: -65px; /* Hide initially */
+    bottom: -75px; /* Hide initially */
     left: 0;
     width: 100%;
     padding: 20px;

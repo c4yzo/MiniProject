@@ -7,8 +7,7 @@
     padding: 0;
     margin: 0;
     overflow-x: hidden;
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.25)50%), url('../../images/QoGhYp.jpg');
-    background-position: top;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.25)50%), url('../../images/backiee-177718-landscape.jpg');
     background-size: cover;
     background-repeat: no-repeat;
 }
@@ -16,7 +15,7 @@
 .signin-screen .containerr {
     display: flex;
     flex-wrap: wrap;
-    min-height: 75vh;
+    height: 90vh;
     margin-top: 10vh;
 }
 
@@ -25,6 +24,7 @@
     max-width: 900px;
     height: auto;
     margin: auto;
+    padding: 50px;
     color: #fff;
 }
 
@@ -43,12 +43,10 @@
 
 .signin-screen .login-form {
     min-width: 400px;
-    max-width: 400px;
     background: rgba(0, 0, 0, 0.7);
     padding: 30px;
     border-radius: 12px;
     box-sizing: border-box;
-    height: 450px;
     margin: auto;
     backdrop-filter: blur(10px);
 }
@@ -93,6 +91,7 @@
 .signin-screen .input-box {
     position: relative;
     width: 100%;
+    margin-top: 20px;
     margin-bottom: 30px;
 }
 
@@ -130,7 +129,7 @@
 .signin-screen .line2 {
     width: 100%;
     color: #fff;
-    margin-top: 28px;
+    margin: 28px 0px;
 }
 
 .signin-screen .input-box input:focus~label,
@@ -165,7 +164,7 @@
     display: block;
     background-color: #286626;
     color: #fff;
-    margin: 38px auto 0;
+    margin: 20px auto;
     font-size: 18px;
     width: 60%;
     text-align: center;

@@ -27,7 +27,7 @@ export default function CartScreen() {
     }
     return (
         <>
-            <title>Cart | MiniProject</title>
+            <title>Cart | Nateurix</title>
             <div className="cart-screen">
                 <div className="cart-container">
                     <h2>Your Cart</h2>

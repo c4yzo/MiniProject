@@ -35,7 +35,7 @@ export default function SigninScreen() {
     }, [userInfo, navigate, redirect]);
     return (
         <>
-            <title>Signin | MiniProject</title>
+            <title>Signin | Nateurix</title>
             <div className="signin-screen">
                 <div className="containerr">
                     <div className="content">
