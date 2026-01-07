@@ -1,7 +1,55 @@
-import React from 'react'
+import React, { useContext, useEffect, useState } from 'react'
+import { Link, useNavigate } from 'react-router-dom';
 import './ShippingScreen.css'
+import { Store } from '../../Store';
 
 export default function ShippingScreen() {
+    const navigate = useNavigate();
+
+    const { state, dispatch: ctxDispatch } = useContext(Store);
+    const { userInfo, cart: { shippingAddress } } = state;
+
+    const [firstName, setFirstName] = useState(shippingAddress.firstName || '');
+    const [lastName, setLastName] = useState(shippingAddress.lastName || '');
+    const [address, setAddress] = useState(shippingAddress.address || '');
+    const [city, setCity] = useState(shippingAddress.city || '');
+    const [country, setCountry] = useState(shippingAddress.country || '');
+    const [zipCode, setZipCode] = useState(shippingAddress.zipCode || '');
+    const [phone, setPhone] = useState(shippingAddress.phone || '');
+
+    const submitHandler = (e) => {
+        e.preventDefault();
+
+        ctxDispatch({
+            type: 'SAVE_SHIPPING_ADDRESS',
+            payload: {
+                firstName,
+                lastName,
+                address,
+                city,
+                country,
+                zipCode,
+                phone
+            }
+        });
+        localStorage.setItem('shippingAddress', JSON.stringify({
+            firstName,
+            lastName,
+            address,
+            city,
+            country,
+            zipCode,
+            phone
+        }));
+
+        navigate('/payment');
+    }
+
+    useEffect(() => {
+        if (!userInfo) {
+            navigate('/signin?redirect=/shipping');
+        }
+    }, [userInfo, navigate]);
     return (
         <>
             <title>Cart | Nateurix</title>
@@ -31,41 +79,41 @@ export default function ShippingScreen() {
                             <div className="card p-4 p-md-5">
                                 <h3 className="card-title">Shipping Address</h3>
 
-                                <form id="shipping-form">
+                                <form id="shipping-form" onSubmit={submitHandler}>
                                     <div className="row g-3">
                                         <div className="col-md-6">
                                             <label className="form-label">First Name</label>
-                                            <input type="text" className="form-control" placeholder="e.g. John" required></input>
+                                            <input type="text" className="form-control" placeholder="e.g. John" required value={firstName} onChange={(e) => setFirstName(e.target.value)}></input>
                                         </div>
                                         <div className="col-md-6">
                                             <label className="form-label">Last Name</label>
-                                            <input type="text" className="form-control" placeholder="e.g. Doe" required></input>
+                                            <input type="text" className="form-control" placeholder="e.g. Doe" required value={lastName} onChange={(e) => setLastName(e.target.value)}></input>
                                         </div>
                                         <div className="col-12">
                                             <label className="form-label">Street Address</label>
-                                            <input type="text" className="form-control" placeholder="123 Modern Avenue, Suite 400" required></input>
+                                            <input type="text" className="form-control" placeholder="123 Modern Avenue, Suite 400" required value={address} onChange={(e) => setAddress(e.target.value)}></input>
                                         </div>
                                         <div className="col-md-6">
                                             <label className="form-label">City</label>
-                                            <input type="text" className="form-control" placeholder="New York" required></input>
+                                            <input type="text" className="form-control" placeholder="New York" required value={city} onChange={(e) => setCity(e.target.value)}></input>
                                         </div>
                                         <div className="col-md-3">
-                                            <label className="form-label">State</label>
-                                            <select className="form-select" required defaultValue="">
+                                            <label className="form-label">Country</label>
+                                            <select className="form-select" required value={country} onChange={(e) => setCountry(e.target.value)}>
                                                 <option value="" disabled>Select</option>
-                                                <option>NY</option>
-                                                <option>CA</option>
-                                                <option>TX</option>
-                                                <option>FL</option>
+                                                <option>IN</option>
+                                                <option>US</option>
+                                                <option>JP</option>
+                                                <option>NL</option>
                                             </select>
                                         </div>
                                         <div className="col-md-3">
                                             <label className="form-label">ZIP Code</label>
-                                            <input type="text" className="form-control" placeholder="10001" required></input>
+                                            <input type="text" className="form-control" placeholder="10001" required value={zipCode} onChange={(e) => setZipCode(e.target.value)}></input>
                                         </div>
                                         <div className="col-12">
                                             <label className="form-label">Phone Number</label>
-                                            <input type="tel" className="form-control" placeholder="+1 (555) 000-0000" required></input>
+                                            <input type="tel" className="form-control" placeholder="+1 (555) 000-0000" required value={phone} onChange={(e) => setPhone(e.target.value)}></input>
                                         </div>
                                     </div>
 
@@ -75,10 +123,10 @@ export default function ShippingScreen() {
                                             <svg className="icon icon-sm ms-2" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12" /><polyline points="12 5 19 12 12 19" /></svg>
                                         </button>
                                         <div className="text-center mt-3">
-                                            <a href="#" className="text-muted text-decoration-none small fw-medium">
+                                            <Link to={'/cart'} className="text-muted text-decoration-none small fw-medium">
                                                 <svg className="icon icon-xs d-inline-block align-middle" viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6" /></svg>
                                                 Return to cart
-                                            </a>
+                                            </Link>
                                         </div>
                                     </div>
                                 </form>
