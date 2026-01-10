@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react';
-import { useLocation, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import './SigninScreen.css';
 import axios from 'axios';
 import { Store } from '../../Store';
@@ -44,20 +44,20 @@ export default function SigninScreen() {
                     </div>
                     <form className="login-form" onSubmit={submitHandler}>
                         <div className="input-box">
-                            <input className="inf" type="text" onChange={(e) => setEmail(e.target.value)} required></input>
+                            <input type="text" onChange={(e) => setEmail(e.target.value)} required></input>
                             <label>Email address or phone number</label>
-                            <span className="line"></span>
+                            <span></span>
                         </div>
 
                         <div className="input-box">
-                            <input className="inf" type="password" onChange={(e) => setPassword(e.target.value)} required></input>
+                            <input type="password" onChange={(e) => setPassword(e.target.value)} required></input>
                             <label>Password</label>
-                            <span className="line"></span>
+                            <span></span>
                         </div>
                         <button type='submit' className="log_in">Log in</button>
                         <a href="fp.html" className="pass">Forgotten password?</a>
-                        <hr className="line2"></hr>
-                        <a href="register.html" className="butt">Create new account</a>
+                        <hr className="line"></hr>
+                        <Link to={'/signup'} className="btn">Create new account</Link>
                     </form>
                 </div>
             </div>

@@ -1,0 +1,184 @@
+.signup-screen * {
+    box-sizing: content-box;
+    font-family: initial;
+}
+
+.signup-screen {
+    padding: 0;
+    margin: 0;
+    overflow-x: hidden;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.25) 50%),
+        url('../../images/backiee-177718-landscape.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+}
+
+.signup-screen .containerr {
+    display: flex;
+    flex-wrap: wrap;
+    height: 90vh;
+    margin-top: 10vh;
+}
+
+.signup-screen .content {
+    min-width: 500px;
+    max-width: 900px;
+    height: auto;
+    margin: auto;
+    padding: 50px;
+    color: #fff;
+}
+
+.signup-screen .content h1 {
+    font-family: 'Times New Roman';
+    font-size: 50px;
+    letter-spacing: 2px;
+    color: #fff;
+}
+
+.signup-screen .content .par {
+    font-family: Arial;
+    letter-spacing: 1.2px;
+    line-height: 30px;
+}
+
+.signup-screen .signup-form {
+    min-width: 600px;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 30px;
+    border-radius: 12px;
+    box-sizing: border-box;
+    margin: auto;
+    backdrop-filter: blur(10px);
+}
+
+.signup-screen .form-title {
+    color: #fff;
+    text-align: center;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+.signup-screen .input-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.signup-screen .full-width {
+    grid-column: span 2;
+}
+
+.signup-screen .input-box {
+    position: relative;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.signup-screen .input-box input {
+    width: 100%;
+    padding: 10px 5px;
+    font-size: 16px;
+    color: #fff;
+    background: transparent;
+    border: none;
+    outline: none;
+}
+
+.signup-screen .input-box label {
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    color: #ccc;
+    font-size: 15px;
+    pointer-events: none;
+    transform: translateY(-50%);
+    transition: 0.3s ease;
+}
+
+.signup-screen .input-box .date {
+    box-sizing: border-box;
+    color-scheme: dark;
+}
+
+.signup-screen .input-box input[type="date"]~label,
+.signup-screen .input-box .static-label {
+    top: -8px;
+    font-size: 12px;
+    color: white;
+}
+
+.signup-screen .input-box span {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: #555;
+    transition: 0.3s;
+}
+
+.signup-screen .input-box input:focus~label,
+.signup-screen .input-box input:valid~label {
+    top: -8px;
+    font-size: 12px;
+    color: white;
+
+}
+
+.signup-screen .input-box input:focus~span,
+.signup-screen .input-box input:valid~span {
+    background: #1c3b1b;
+
+}
+
+.signup-screen .sign_up_btn {
+    all: unset;
+    display: block;
+    background-color: #1c3b1b;
+    width: 90%;
+    color: #fff;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 12px;
+    border-radius: 10px;
+    text-align: center;
+    margin: 40px auto;
+    cursor: pointer;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.signup-screen .sign_up_btn:hover {
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+    background-color: #1e3f1d;
+    color: #f0eded;
+}
+
+.signup-screen .sign_up_btn:active {
+    transform: scale(0.95);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
+}
+
+.signup-screen .login-link {
+    text-align: center;
+    color: #ccc;
+    margin-top: 20px;
+    font-size: 14px;
+}
+
+.signup-screen .login-link a {
+    color: #fff;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.signup-screen .login-link a:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 1600px) {
+    .signup-screen .signup-form {
+        margin-top: 50px;
+    }
+}

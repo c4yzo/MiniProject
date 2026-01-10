@@ -7,9 +7,11 @@
     padding: 0;
     margin: 0;
     overflow-x: hidden;
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.25)50%), url('../../images/backiee-177718-landscape.jpg');
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.25) 50%),
+        url('../../images/backiee-177718-landscape.jpg');
     background-size: cover;
     background-repeat: no-repeat;
+    min-height: 100vh;
 }
 
 .signin-screen .containerr {
@@ -51,30 +53,21 @@
     backdrop-filter: blur(10px);
 }
 
-.signin-screen .login-form .in {
-    width: 90%;
-    padding: 12px;
-    margin-bottom: 20px;
-    font-size: 16px;
-    border-radius: 10px;
-    border: 1px solid #ddd;
-}
-
 .signin-screen .log_in {
     all: unset;
     display: inline-block;
     background-color: #1c3b1b;
-    min-width: 90%;
+    width: 90%;
     color: #fff;
     font-size: 18px;
     font-weight: bold;
     padding: 12px;
     border-radius: 10px;
     text-align: center;
-    text-decoration: none;
     margin-top: 30px;
     margin-bottom: 40px;
-    transition: transform 0.15s ease, box-shadow 0.15 ease;
+    cursor: pointer;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
 }
 
 .signin-screen .log_in:hover {
@@ -126,7 +119,7 @@
     transition: 0.3s;
 }
 
-.signin-screen .line2 {
+.signin-screen .line {
     width: 100%;
     color: #fff;
     margin: 28px 0px;
@@ -147,7 +140,7 @@
 }
 
 .signin-screen .pass {
-    display: inline;
+    display: inline-block;
     text-align: center;
     color: white;
     font-size: 15px;
@@ -160,7 +153,7 @@
     color: #f0eded;
 }
 
-.signin-screen .butt {
+.signin-screen .btn {
     display: block;
     background-color: #286626;
     color: #fff;
@@ -172,15 +165,15 @@
     border-radius: 6px;
     font-weight: bold;
     text-decoration: none;
-    transition: transform 0.15s ease, box-shadow 0.15 ease;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
 }
 
-.signin-screen .butt:hover {
+.signin-screen .btn:hover {
     background-color: #2b6929;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
 }
 
-.signin-screen .butt:active {
+.signin-screen .btn:active {
     transform: scale(0.95);
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
 }

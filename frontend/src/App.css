@@ -5,6 +5,15 @@
     font-family: 'Poppins', sans-serif;
 }
 
+:root {
+    --primary-color: #000000;
+    --accent-color: #4f46e5;
+    --bg-light: #f9fafb;
+    --border-color: #e5e7eb;
+    --text-muted: #6b7280;
+    --card-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.05);
+}
+
 body {
     background-color: #f4f7f6;
 }

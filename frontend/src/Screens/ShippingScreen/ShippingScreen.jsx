@@ -98,13 +98,37 @@ export default function ShippingScreen() {
                                             <input type="text" className="form-control" placeholder="New York" required value={city} onChange={(e) => setCity(e.target.value)}></input>
                                         </div>
                                         <div className="col-md-3">
-                                            <label className="form-label">Country</label>
+                                            <label className="form-label">State</label>
                                             <select className="form-select" required value={country} onChange={(e) => setCountry(e.target.value)}>
                                                 <option value="" disabled>Select</option>
-                                                <option>IN</option>
-                                                <option>US</option>
-                                                <option>JP</option>
-                                                <option>NL</option>
+                                                <option value="Andhra Pradesh">Andhra Pradesh</option>
+                                                <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+                                                <option value="Assam">Assam</option>
+                                                <option value="Bihar">Bihar</option>
+                                                <option value="Chhattisgarh">Chhattisgarh</option>
+                                                <option value="Goa">Goa</option>
+                                                <option value="Gujarat">Gujarat</option>
+                                                <option value="Haryana">Haryana</option>
+                                                <option value="Himachal Pradesh">Himachal Pradesh</option>
+                                                <option value="Jharkhand">Jharkhand</option>
+                                                <option value="Karnataka">Karnataka</option>
+                                                <option value="Kerala">Kerala</option>
+                                                <option value="Madhya Pradesh">Madhya Pradesh</option>
+                                                <option value="Maharashtra">Maharashtra</option>
+                                                <option value="Manipur">Manipur</option>
+                                                <option value="Meghalaya">Meghalaya</option>
+                                                <option value="Mizoram">Mizoram</option>
+                                                <option value="Nagaland">Nagaland</option>
+                                                <option value="Odisha">Odisha</option>
+                                                <option value="Punjab">Punjab</option>
+                                                <option value="Rajasthan">Rajasthan</option>
+                                                <option value="Sikkim">Sikkim</option>
+                                                <option value="Tamil Nadu">Tamil Nadu</option>
+                                                <option value="Telangana">Telangana</option>
+                                                <option value="Tripura">Tripura</option>
+                                                <option value="Uttar Pradesh">Uttar Pradesh</option>
+                                                <option value="Uttarakhand">Uttarakhand</option>
+                                                <option value="West Bengal">West Bengal</option>
                                             </select>
                                         </div>
                                         <div className="col-md-3">
@@ -113,7 +137,7 @@ export default function ShippingScreen() {
                                         </div>
                                         <div className="col-12">
                                             <label className="form-label">Phone Number</label>
-                                            <input type="tel" className="form-control" placeholder="+1 (555) 000-0000" required value={phone} onChange={(e) => setPhone(e.target.value)}></input>
+                                            <input type="tel" className="form-control" placeholder="+91 (555) 000-0000" required value={phone} onChange={(e) => setPhone(e.target.value)}></input>
                                         </div>
                                     </div>
 
