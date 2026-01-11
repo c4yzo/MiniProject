@@ -10,11 +10,17 @@ export default function SigninScreen() {
     const redirectInUrl = new URLSearchParams(search).get('redirect');
     const redirect = redirectInUrl ? redirectInUrl : '/';
 
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
-
     const { state, dispatch: ctxDispatch } = useContext(Store);
     const { userInfo } = state;
+
+    useEffect(() => {
+        if (userInfo) {
+            navigate(redirect);
+        }
+    }, [userInfo, navigate, redirect]);
+
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
 
     const submitHandler = async (e) => {
         e.preventDefault();
@@ -27,12 +33,6 @@ export default function SigninScreen() {
             alert("Invalid email or password");
         }
     };
-
-    useEffect(() => {
-        if (userInfo) {
-            navigate(redirect);
-        }
-    }, [userInfo, navigate, redirect]);
     return (
         <>
             <title>Signin | Nateurix</title>
