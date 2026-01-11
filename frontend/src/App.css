@@ -12,6 +12,13 @@
     --border-color: #e5e7eb;
     --text-muted: #6b7280;
     --card-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.05);
+
+    --primary-black: #111827;
+    --accent-indigo: #4f46e5;
+    --bg-soft: #fbfbfd;
+    --border-light: #f3f4f6;
+    --text-gray: #6b7280;
+    --success-green: #10b981;
 }
 
 body {

@@ -6,7 +6,8 @@ import SigninScreen from './Screens/SigninScreen/SigninScreen.jsx';
 import SignupScreen from './Screens/SignupScreen/SignupScreen.jsx';
 import ProductScreen from './Screens/ProductScreen/ProductScreen.jsx';
 import CartScreen from './Screens/CartScreen/CartScreen.jsx';
-import ShippingScreen from './Screens/ShippingScreen/ShippingScreen.jsx';
+import ShippingAddressScreen from './Screens/ShippingAddressScreen/ShippingAddressScreen.jsx';
+import PaymentMethodScreen from './Screens/PaymentMethodScreen/PaymentMethodScreen.jsx';
 
 function App() {
   return (
@@ -20,7 +21,8 @@ function App() {
             <Route path="/signup" element={<SignupScreen />} />
             <Route path="/product/:id" element={<ProductScreen />} />
             <Route path="/cart" element={<CartScreen />} />
-            <Route path="/shipping" element={<ShippingScreen />} />
+            <Route path="/shipping" element={<ShippingAddressScreen />} />
+            <Route path="/payment" element={<PaymentMethodScreen />} />
           </Routes>
         </main>
       </div>

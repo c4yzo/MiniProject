@@ -1,9 +1,9 @@
 import React, { useContext, useEffect, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom';
-import './ShippingScreen.css'
+import './ShippingAddressScreen.css';
 import { Store } from '../../Store';
 
-export default function ShippingScreen() {
+export default function ShippingAddressScreen() {
     const navigate = useNavigate();
 
     const { state, dispatch: ctxDispatch } = useContext(Store);
@@ -52,8 +52,8 @@ export default function ShippingScreen() {
     }, [userInfo, navigate]);
     return (
         <>
-            <title>Cart | Nateurix</title>
-            <div className="shipping-screen">
+            <title>Shipping Address | Nateurix</title>
+            <div className="shipping-address-screen">
                 <div className="container checkout-container">
                     <div className="stepper">
                         <div className="step completed">

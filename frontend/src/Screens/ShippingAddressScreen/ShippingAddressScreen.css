@@ -1,8 +1,8 @@
-.shipping-screen {
+.shipping-address-screen {
     margin-top: 14vh;
 }
 
-.shipping-screen .icon {
+.shipping-address-screen .icon {
     width: 20px;
     height: 20px;
     fill: none;
@@ -13,25 +13,25 @@
     vertical-align: middle;
 }
 
-.shipping-screen .icon-sm {
+.shipping-address-screen .icon-sm {
     width: 16px;
     height: 16px;
 }
 
-.shipping-screen .icon-xs {
+.shipping-address-screen .icon-xs {
     width: 14px;
     height: 14px;
 }
 
-.shipping-screen .icon-primary {
+.shipping-address-screen .icon-primary {
     color: var(--accent-color);
 }
 
-.shipping-screen .icon-success {
+.shipping-address-screen .icon-success {
     color: #10b981;
 }
 
-.shipping-screen .stepper {
+.shipping-address-screen .stepper {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -39,7 +39,7 @@
     gap: 0;
 }
 
-.shipping-screen .step {
+.shipping-address-screen .step {
     display: flex;
     align-items: center;
     gap: 12px;
@@ -49,28 +49,29 @@
     position: relative;
 }
 
-.shipping-screen .step.completed {
+.shipping-address-screen .step.completed {
     color: var(--primary-color);
 }
 
-.shipping-screen .step.completed .step-num {
+.shipping-address-screen .step.completed .step-num {
     background: #ecfdf5;
     color: #10b981;
     border-color: #10b981;
 }
 
-.shipping-screen .step.active {
+.shipping-address-screen .step.active {
     color: var(--primary-color);
     font-weight: 700;
 }
 
-.shipping-screen .step.active .step-num {
+.shipping-address-screen .step.active .step-num {
     background: var(--primary-color);
     color: white;
     border-color: var(--primary-color);
+    box-shadow: 0 0 0 4px rgba(0, 0, 0, 0.05);
 }
 
-.shipping-screen .step-num {
+.shipping-address-screen .step-num {
     width: 32px;
     height: 32px;
     border-radius: 50%;
@@ -84,23 +85,23 @@
     z-index: 2;
 }
 
-.shipping-screen .step-line {
+.shipping-address-screen .step-line {
     height: 2px;
     width: 60px;
     background: var(--border-color);
     margin: 0 15px;
 }
 
-.shipping-screen .step.completed+.step-line {
+.shipping-address-screen .step.completed+.step-line {
     background: #10b981;
 }
 
-.shipping-screen .checkout-container {
+.shipping-address-screen .checkout-container {
     max-width: 1100px;
     margin: 0 auto;
 }
 
-.shipping-screen .card {
+.shipping-address-screen .card {
     border: none;
     border-radius: 20px;
     box-shadow: var(--card-shadow);
@@ -108,14 +109,14 @@
     height: 100%;
 }
 
-.shipping-screen .card-title {
+.shipping-address-screen .card-title {
     font-weight: 800;
     font-size: 1.5rem;
     margin-bottom: 1.5rem;
     letter-spacing: -0.025em;
 }
 
-.shipping-screen .form-label {
+.shipping-address-screen .form-label {
     font-weight: 600;
     font-size: 0.8rem;
     text-transform: uppercase;
@@ -124,8 +125,8 @@
     margin-bottom: 8px;
 }
 
-.shipping-screen .form-control,
-.shipping-screen .form-select {
+.shipping-address-screen .form-control,
+.shipping-address-screen .form-select {
     border: 1px solid var(--border-color);
     border-radius: 12px;
     padding: 12px 16px;
@@ -134,14 +135,14 @@
     background-color: #fff;
 }
 
-.shipping-screen .form-control:focus,
-.shipping-screen .form-select:focus {
+.shipping-address-screen .form-control:focus,
+.shipping-address-screen .form-select:focus {
     box-shadow: 0 0 0 4px rgba(79, 70, 229, 0.1);
     border-color: var(--accent-color);
     outline: none;
 }
 
-.shipping-screen .shipping-option {
+.shipping-address-screen .shipping-option {
     position: relative;
     border: 2px solid var(--border-color);
     border-radius: 16px;
@@ -153,22 +154,22 @@
     margin-bottom: 16px;
 }
 
-.shipping-screen .shipping-option:hover {
+.shipping-address-screen .shipping-option:hover {
     border-color: #cbd5e1;
 }
 
-.shipping-screen .shipping-option:has(input:disabled) {
+.shipping-address-screen .shipping-option:has(input:disabled) {
     opacity: 0.5;
     cursor: not-allowed;
     background-color: #f3f4f6;
 }
 
-.shipping-screen .shipping-option:has(input:disabled) * {
+.shipping-address-screen .shipping-option:has(input:disabled) * {
     cursor: not-allowed !important;
     user-select: none;
 }
 
-.shipping-screen .shipping-option input[type="radio"] {
+.shipping-address-screen .shipping-option input[type="radio"] {
     appearance: none;
     width: 20px;
     height: 20px;
@@ -181,12 +182,12 @@
     position: relative;
 }
 
-.shipping-screen .shipping-option input[type="radio"]:checked {
+.shipping-address-screen .shipping-option input[type="radio"]:checked {
     border-color: var(--accent-color);
     background-color: var(--accent-color);
 }
 
-.shipping-screen .shipping-option input[type="radio"]:checked::after {
+.shipping-address-screen .shipping-option input[type="radio"]:checked::after {
     content: '';
     position: absolute;
     width: 8px;
@@ -198,18 +199,18 @@
     transform: translate(-50%, -50%);
 }
 
-.shipping-screen .shipping-option.selected {
+.shipping-address-screen .shipping-option.selected {
     border-color: var(--accent-color);
     background-color: #f5f3ff;
     box-shadow: 0 4px 12px rgba(79, 70, 229, 0.08);
 }
 
-.shipping-screen .shipping-option-content {
+.shipping-address-screen .shipping-option-content {
     margin-left: 16px;
     flex-grow: 1;
 }
 
-.shipping-screen .btn-primary {
+.shipping-address-screen .btn-primary {
     background-color: var(--primary-color);
     border: none;
     padding: 18px;
@@ -221,28 +222,28 @@
     margin-top: 10px;
 }
 
-.shipping-screen .btn-primary:hover {
+.shipping-address-screen .btn-primary:hover {
     background-color: #1f2937;
     transform: translateY(-2px);
     box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
 }
 
 @media (max-width: 991px) {
-    .shipping-screen .stepper {
+    .shipping-address-screen .stepper {
         transform: scale(0.9);
     }
 }
 
 @media (max-width: 768px) {
-    .shipping-screen .stepper {
+    .shipping-address-screen .stepper {
         display: none;
     }
 
-    .shipping-screen .checkout-container {
+    .shipping-address-screen .checkout-container {
         padding: 15px;
     }
 
-    .shipping-screen .card {
+    .shipping-address-screen .card {
         padding: 25px !important;
     }
 }
