@@ -50,7 +50,7 @@
 }
 
 .shipping-address-screen .step.completed {
-    color: var(--primary-color);
+    color: var(--secondary-black);
 }
 
 .shipping-address-screen .step.completed .step-num {
@@ -60,14 +60,14 @@
 }
 
 .shipping-address-screen .step.active {
-    color: var(--primary-color);
+    color: var(--secondary-black);
     font-weight: 700;
 }
 
 .shipping-address-screen .step.active .step-num {
-    background: var(--primary-color);
+    background: var(--secondary-black);
     color: white;
-    border-color: var(--primary-color);
+    border-color: var(--secondary-black);
     box-shadow: 0 0 0 4px rgba(0, 0, 0, 0.05);
 }
 
@@ -211,7 +211,7 @@
 }
 
 .shipping-address-screen .btn-primary {
-    background-color: var(--primary-color);
+    background-color: var(--secondary-black);
     border: none;
     padding: 18px;
     border-radius: 14px;

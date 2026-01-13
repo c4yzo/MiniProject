@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useReducer } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
-import './ProductScreen.css';
+import './ProductScreen.scss';
 import axios from 'axios';
 import { Store } from '../../Store';
 
@@ -68,29 +68,66 @@ export default function ProductScreen() {
                     ? <div>{error}</div>
                     :
                     <div className="product-screen">
-                        <div className="product-card">
-                            <img src={product.image} alt={product.name}></img>
+                        <div className="container page-container">
+                            <div className="row align-items-center gx-5">
 
-                            <div className="product-name">{product.name}</div>
-
-                            <div className="price">₹{product.price}</div>
-
-                            <div className="rating">{product.rating} ★★★★☆</div>
-                            <div className="reviews">{product.numReviews} reviews</div>
-
-                            {product.countInStock > 0 ?
-                                <div className="status">In Stock</div> :
-                                <div className="status">Unavailable</div>
-                            }
-
-                            <div className="description">{product.description}</div>
-
-                            {product.countInStock > 0 &&
-                                <div className="buttons">
-                                    <button className="cart-btn" onClick={addToCartHandler}>Add to Cart</button>
-                                    <button className="buy-btn">Buy Now</button>
+                                <div className="col-lg-6 mb-4 mb-lg-0">
+                                    <div className="product-image-card">
+                                        <button className="wishlist-btn" title="Add to Wishlist">
+                                            <i className="bi bi-heart"></i>
+                                        </button>
+                                        <img src={product.image} alt={product.name} className="product-img"></img>
+                                    </div>
                                 </div>
-                            }
+
+                                <div className="col-lg-6">
+                                    <div className="product-details">
+                                        <div className="breadcrumb-custom">
+                                            Home / {product.category} / {product.name}
+                                        </div>
+
+                                        <h1 className="product-title">{product.name}</h1>
+
+                                        <div className="product-meta">
+                                            <span className="rating-badge">
+                                                <i className="bi bi-star-fill"></i> {product.rating}
+                                            </span>
+                                            <span className="review-count">{product.numReviews} Reviews</span>
+
+                                            {product.countInStock > 0 ?
+                                                <span className="stock-status status-in-stock">
+                                                    <i className="bi bi-check-circle-fill me-1"></i> In Stock
+                                                </span> :
+                                                <span className="stock-status status-in-stock">
+                                                    <i className="bi bi-check-circle-fill me-1"></i> Unavailable
+                                                </span>
+                                            }
+
+                                        </div>
+
+                                        <div className="product-price">
+                                            ₹{product.price}
+                                        </div>
+
+                                        <p className="product-description">
+                                            {product.description}
+                                        </p>
+
+                                        {product.countInStock > 0 &&
+                                            <div className="action-buttons">
+                                                <button className="btn btn-primary-custom btn-custom">
+                                                    Buy Now
+                                                </button>
+                                                <button className="btn btn-outline-custom btn-custom" onClick={addToCartHandler}>
+                                                    <i className="bi bi-cart-plus me-2"></i> Add to Cart
+                                                </button>
+                                            </div>
+                                        }
+
+                                    </div>
+                                </div>
+
+                            </div>
                         </div>
                     </div>
             }

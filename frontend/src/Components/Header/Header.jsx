@@ -16,9 +16,9 @@ export default function Header() {
             <nav className="navbar navbar-expand-lg fixed-top custom-navbar">
                 <div className="container-fluid">
 
-                    <a className="navbar-brand" href="#">
+                    <Link to="/" className="navbar-brand">
                         <img src="/logo.svg" alt="Natuarix" height="40"></img>
-                    </a>
+                    </Link>
 
                     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent"
                         aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -41,28 +41,28 @@ export default function Header() {
                             </li>
 
                             <li className="nav-item">
-                                <a className="nav-link position-relative" href="notification.html">
+                                <Link to="/notification" className="nav-link position-relative">
                                     <i className="fa-regular fa-bell"></i> Notification
                                     <span className="position-absolute translate-middle badge rounded-pill bg-danger notification-badge">2</span>
-                                </a>
+                                </Link>
                             </li>
 
                             <li className="nav-item">
-                                <a className="nav-link active" href="index.html">
+                                <Link to="/" className="nav-link active">
                                     <i className="fa-solid fa-house"></i> Home
-                                </a>
+                                </Link>
                             </li>
 
                             <li className="nav-item">
-                                <a className="nav-link" href="order.html">
+                                <Link to="/orders" className="nav-link">
                                     <i className="fa-solid fa-box-archive"></i> My Order
-                                </a>
+                                </Link>
                             </li>
 
                             <li className="nav-item">
-                                <a className="nav-link" href="wishlist.html">
+                                <Link to="/wishlist" className="nav-link">
                                     <i className="fa-regular fa-heart"></i> Wishlist
-                                </a>
+                                </Link>
                             </li>
 
                             <li className="nav-item">

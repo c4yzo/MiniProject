@@ -1,3 +1,6 @@
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap');
+
 * {
     margin: 0;
     padding: 0;
@@ -6,19 +9,41 @@
 }
 
 :root {
-    --primary-color: #000000;
+    /* For Shipping Address Screen */
+    --secondary-black: #000000;
     --accent-color: #4f46e5;
     --bg-light: #f9fafb;
     --border-color: #e5e7eb;
     --text-muted: #6b7280;
     --card-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.05);
 
+    /* For Payment Method Screen */
     --primary-black: #111827;
     --accent-indigo: #4f46e5;
     --bg-soft: #fbfbfd;
     --border-light: #f3f4f6;
     --text-gray: #6b7280;
     --success-green: #10b981;
+
+    /* For Product Screen */
+    --primary-color: #10b981;
+    /* Emerald 500 */
+    --primary-dark: #059669;
+    /* Emerald 600 */
+    --secondary-color: #34d399;
+    /* Emerald 400 */
+    --text-dark: #1f2937;
+    /* Gray 900 */
+    --text-muted: #6b7280;
+    /* Gray 500 */
+    --bg-light: #f9fafb;
+    /* Gray 50 */
+    --white: #ffffff;
+    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    --radius-lg: 1rem;
+    --radius-xl: 1.5rem;
 }
 
 body {

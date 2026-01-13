@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react'
 import { Link, useLocation, useNavigate } from 'react-router-dom'
-import './SignupScreen.css';
+import './SignupScreen.scss';
 import axios from 'axios';
 import { Store } from '../../Store';
 

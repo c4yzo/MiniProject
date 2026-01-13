@@ -50,7 +50,7 @@
 }
 
 .payment-method-screen .step.completed {
-    color: var(--primary-color);
+    color: var(--secondary-black);
 }
 
 .payment-method-screen .step.completed .step-num {
@@ -60,14 +60,14 @@
 }
 
 .payment-method-screen .step.active {
-    color: var(--primary-color);
+    color: var(--secondary-black);
     font-weight: 700;
 }
 
 .payment-method-screen .step.active .step-num {
-    background: var(--primary-color);
+    background: var(--secondary-black);
     color: white;
-    border-color: var(--primary-color);
+    border-color: var(--secondary-black);
     box-shadow: 0 0 0 4px rgba(0, 0, 0, 0.05);
 }
 
