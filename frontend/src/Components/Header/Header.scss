@@ -54,16 +54,23 @@
                 margin-bottom: 4px;
             }
 
-            &:hover,
-            &.active {
+            &:hover {
                 color: #0aad0a !important;
                 transform: translateY(-2px);
+            }
+
+            &.active {
+                color: #0aad0a !important;
             }
 
             &.position-relative {
                 display: inline-flex;
                 align-items: center;
             }
+        }
+
+        .dropdown-toggle::after {
+            content: unset;
         }
     }
 
@@ -145,7 +152,7 @@
         border: 1px solid rgba(255, 255, 255, 0.1);
         box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
         padding: 10px 0;
-        margin-top: 15px;
+        margin-top: 16px;
         border-radius: 10px;
 
         .dropdown-item {

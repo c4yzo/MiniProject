@@ -1,8 +1,12 @@
 import React, { useContext } from 'react'
 import './Header.scss'
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 import { Store } from '../../Store'
 export default function Header() {
+    const { pathname } = useLocation();
+    const activeHome = pathname === '/'
+    const activeCart = pathname === '/cart'
+
     const { state, dispatch: ctxDispatch } = useContext(Store);
     const { userInfo, cart } = state;
 
@@ -48,7 +52,7 @@ export default function Header() {
                             </li>
 
                             <li className="nav-item">
-                                <Link to="/" className="nav-link active">
+                                <Link to="/" className={`nav-link ${activeHome ? 'active' : ''}`}>
                                     <i className="fa-solid fa-house"></i> Home
                                 </Link>
                             </li>
@@ -66,7 +70,7 @@ export default function Header() {
                             </li>
 
                             <li className="nav-item">
-                                <Link to="/cart" className="nav-link position-relative">
+                                <Link to="/cart" className={`nav-link position-relative ${activeCart ? 'active' : ''}`}>
                                     <i className="fa-solid fa-cart-shopping"></i> Cart
                                     {cart.cartItems.length > 0 &&
                                         <span className="position-absolute translate-middle badge rounded-pill bg-danger cart-badge">{cart.cartItems.length}</span>
