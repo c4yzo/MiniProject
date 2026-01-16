@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'
-import './Header.css'
+import './Header.scss'
 import { Link } from 'react-router-dom'
 import { Store } from '../../Store'
 export default function Header() {

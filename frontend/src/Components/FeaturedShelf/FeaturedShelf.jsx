@@ -1,5 +1,5 @@
 import React from 'react'
-import './FeaturedShelf.css'
+import './FeaturedShelf.scss'
 
 export default function FeaturedShelf() {
     return (
