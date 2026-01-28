@@ -1,8 +1,28 @@
-import React from 'react'
-import { Link } from 'react-router-dom';
+import React, { useContext, useEffect, useState } from 'react'
+import { Link, useNavigate } from 'react-router-dom';
 import './PaymentMethodScreen.scss';
+import { Store } from '../../Store';
 
 export default function PaymentMethodScreen() {
+    const navigate = useNavigate();
+
+    const { state, dispatch: ctxDispatch } = useContext(Store);
+    const { cart: { shippingAddress } } = state;
+
+    useEffect(() => {
+        if (!shippingAddress.address) {
+            navigate('/shipping');
+        }
+    }, [shippingAddress, navigate]);
+
+    const [paymentMethod, setPaymentMethod] = useState('PayPal');
+
+    const submitHandler = (e) => {
+        e.preventDefault();
+        ctxDispatch({ type: 'SAVE_PAYMENT_METHOD', payload: paymentMethod });
+        localStorage.setItem('paymentMethod', JSON.stringify(paymentMethod));
+        navigate('/placeorder');
+    }
     return (
         <>
             <title>Payment Method | Nateurix</title>
@@ -36,10 +56,10 @@ export default function PaymentMethodScreen() {
                             <p className="text-muted small m-0">Choose how you'd like to pay.</p>
                         </div>
 
-                        <form className="payment-options">
+                        <form className="payment-options" onSubmit={submitHandler}>
 
                             <label className="option-label">
-                                <input type="radio" name="payment_method" value="paypal" checked></input>
+                                <input type="radio" name="payment_method" value="paypal" defaultChecked></input>
                                 <div className="option-card">
                                     <div className="option-icon-wrapper">
                                         <svg viewBox="0 0 24 24" width="32" height="32" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -60,8 +80,22 @@ export default function PaymentMethodScreen() {
                                 <input type="radio" name="payment_method" value="card"></input>
                                 <div className="option-card">
                                     <div className="option-icon-wrapper">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#4b5563" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect><line x1="1" y1="10" x2="23" y2="10"></line></svg>
+                                        <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            width="28"
+                                            height="28"
+                                            viewBox="0 0 24 24"
+                                            fill="none"
+                                            stroke="#4b5563"
+                                            strokeWidth="1.5"
+                                            strokeLinecap="round"
+                                            strokeLinejoin="round"
+                                        >
+                                            <rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect>
+                                            <line x1="1" y1="10" x2="23" y2="10"></line>
+                                        </svg>
                                     </div>
+
                                     <div className="option-details">
                                         <span className="option-title">Credit or Debit Card</span>
                                         <span className="option-desc">Visa, Mastercard, Amex supported.</span>
@@ -101,18 +135,32 @@ export default function PaymentMethodScreen() {
                                     <div className="badge-disabled">Disabled</div>
                                 </div>
                             </label>
-*/}
+                            */}
 
                             <div className="mt-4 pt-2">
-                                <button type="button" className="btn-pay">
+                                <button type="submit" className="btn-pay">
                                     <span>Pay Securely</span>
                                     <span>$249.00</span>
                                 </button>
 
                                 <div className="secure-note">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        width="14"
+                                        height="14"
+                                        viewBox="0 0 24 24"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        strokeWidth="2"
+                                        strokeLinecap="round"
+                                        strokeLinejoin="round"
+                                    >
+                                        <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                                        <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                                    </svg>
                                     All transactions are 256-bit SSL encrypted.
                                 </div>
+
                             </div>
 
                             <div className="text-center mt-3">

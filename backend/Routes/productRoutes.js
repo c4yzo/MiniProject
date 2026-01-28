@@ -13,6 +13,12 @@ productRouter.get('/new-arrivals', async (req, res) => {
     res.send(products);
 });
 
+productRouter.get('/random-products', async (req, res) => {
+    const random = Math.floor(Math.random() * (16 - 5 + 1));
+    const products = await Product.find().skip(random).limit(5);
+    res.send(products);
+});
+
 productRouter.get('/:id', async (req, res) => {
     const product = await Product.findById(req.params.id);
     if (product) {
